@@ -20,7 +20,7 @@ const ProductCardView = () => {
         </View>
         <View style={styles.details}>
           <Text style={styles.title} numberOfLines={1}>
-            Productsefsdfsdfsdfdsf
+            Products1
           </Text>
           <Text style={styles.supplier} numberOfLines={1}>
             Product
