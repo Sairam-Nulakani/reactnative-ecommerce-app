@@ -17,16 +17,15 @@ module.exports = {
   getAllProducts: async (req, res) => {
     try {
       const products = await Product.find().sort({ createdAt: -1 });
-      res.status(200).json({ length: products.length, products: { products } });
+      res.status(200).json({ length: products.length, products: products });
     } catch (err) {
       return res.status(500).json({ message: "Failed to Get The Products" });
     }
   },
   getProduct: async (req, res) => {
-    const id = req.params.id * 1;
     try {
-      const product = await Product.findById(id);
-      return res.status(200).json({ message: "success", product: { product } });
+      const product = await Product.findById(req.params.id);
+      return res.status(200).json({ message: "success", product: product });
     } catch (err) {
       return res.status(500).json({ message: "Failed to Get Product" });
     }
@@ -46,7 +45,7 @@ module.exports = {
           },
         },
       ]);
-      return res.status(200).json({ products: result });
+      return res.status(200).json({ length: result.length, products: result });
     } catch (err) {
       return res.status(500).json({ message: "Failed to Get the Products" });
     }
