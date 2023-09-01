@@ -26,7 +26,7 @@ const ProductCardView = () => {
             Product
           </Text>
           <Text style={styles.price} numberOfLines={1}>
-            9999
+            ₹9999
           </Text>
         </View>
         <TouchableOpacity style={styles.addBtn}>
