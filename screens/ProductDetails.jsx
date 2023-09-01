@@ -5,6 +5,7 @@ import {
   Ionicons,
   SimpleLineIcons,
   MaterialCommunityIcons,
+  Fontisto,
 } from "@expo/vector-icons";
 import { COLORS, SIZES } from "../assets/constants/theme";
 
@@ -73,6 +74,14 @@ const ProductDetails = ({ navigation }) => {
               <Text> Free Delivery </Text>
             </View>
           </View>
+        </View>
+        <View style={styles.cartRow}>
+          <TouchableOpacity onPress={() => {}} style={styles.cartBtn}>
+            <Text style={styles.cartTitle}>BUY NOW</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => {}} style={styles.addCart}>
+            <Fontisto name="shopping-bag" size={24} color={COLORS.lightWhite} />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
