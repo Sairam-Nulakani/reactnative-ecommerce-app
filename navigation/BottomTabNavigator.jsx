@@ -6,7 +6,7 @@ import Search from "../screens/Search";
 import Profile from "../screens/Profile";
 import Cart from "../screens/Cart";
 import { Ionicons } from "@expo/vector-icons";
-import { COLORS } from "../assets/constants/index";
+import { COLORS } from "../assets/constants/theme";
 
 const Tab = createBottomTabNavigator();
 const screenOptions = {

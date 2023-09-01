@@ -1,10 +1,15 @@
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import React from "react";
 import styles from "./welcome.style";
-import { COLORS, SIZES } from "../../assets/constants/index";
-import { Feather } from "@expo/vector-icons";
+import { COLORS, SIZES } from "../../assets/constants/theme";
+import { Feather, Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Welcome = () => {
+  const navigation = useNavigation();
+  const navigateToSearch = () => {
+    navigation.navigate("Search");
+  };
   return (
     <View>
       <View style={styles.container}>
@@ -20,12 +25,22 @@ const Welcome = () => {
           <Feather name="search" size={24} style={styles.searchIcon} />
         </TouchableOpacity>
         <View style={styles.searchWrapper}>
-          <TextInput
-            style={styles.searchInput}
-            value=""
-            onPressIn={() => {}}
-            placeholder="What are you looking for"
-          />
+          <TouchableOpacity onPress={navigateToSearch}>
+            <TextInput
+              style={styles.searchInput}
+              value=""
+              placeholder="What are you looking for"
+            />
+          </TouchableOpacity>
+        </View>
+        <View>
+          <TouchableOpacity style={styles.searchBtn}>
+            <Ionicons
+              name="camera-outline"
+              size={SIZES.xLarge}
+              color={COLORS.offwhite}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     </View>

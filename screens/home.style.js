@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { COLORS, SIZES } from "../assets/constants/index";
+import { COLORS, SIZES } from "../assets/constants/theme";
 const styles = StyleSheet.create({
   textStyle: {
     fontFamily: "bold",
