@@ -5,28 +5,30 @@ import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../assets/constants/theme";
 import { useNavigation } from "@react-navigation/native";
 
-const ProductCardView = () => {
+const ProductCardView = ({ item }) => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("ProductDetails")}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("ProductDetails", { item })}
+    >
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
             source={{
-              uri: "https://img.freepik.com/free-photo/mid-century-modern-living-room-interior-design-with-monstera-tree_53876-129805.jpg?w=2000",
+              uri: item.imageUrl,
             }}
             style={styles.image}
           />
         </View>
         <View style={styles.details}>
           <Text style={styles.title} numberOfLines={1}>
-            Products1
+            {item.title}
           </Text>
           <Text style={styles.supplier} numberOfLines={1}>
-            Product
+            {item.supplier}
           </Text>
           <Text style={styles.price} numberOfLines={1}>
-            ₹9999
+            {item.price}
           </Text>
         </View>
         <TouchableOpacity style={styles.addBtn}>

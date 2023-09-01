@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -11,22 +10,27 @@ const useFetch = () => {
     setIsLoading(true);
     try {
       const res = await axios.get("http://localhost:8090/api/products");
+      console.log(res);
       setData(res.data);
       setIsLoading(false);
-    } catch (err) {
-      setError(err);
+    } catch (error) {
+      setError(error);
+      setIsLoading(false);
     } finally {
       setIsLoading(false);
     }
   };
+
   useEffect(() => {
     fetchData();
   }, []);
+
   const reFetch = () => {
     setIsLoading(true);
     fetchData();
   };
-  return { data, isLoading, err, reFetch };
+
+  return { data, isLoading, error, reFetch };
 };
 
 export default useFetch;
