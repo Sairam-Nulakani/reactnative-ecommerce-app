@@ -6,13 +6,12 @@ import ProductCardView from "./ProductCardView";
 import useFetch from "../../hooks/useFetch";
 
 const ProductRow = () => {
-  const { data, isLoading, err } = useFetch();
-  const products = [1, 2, 3, 4, 5];
+  const { data, isLoading, error } = useFetch();
   return (
     <View style={styles.container}>
       {isLoading ? (
         <ActivityIndicator size={SIZES.xxLarge} color={COLORS.primary} />
-      ) : err ? (
+      ) : error ? (
         <Text>Something Went Wrong</Text>
       ) : (
         <FlatList
