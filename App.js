@@ -6,6 +6,7 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
 import BottomTabNavigator from "./navigation/BottomTabNavigator";
+import ProductDetails from "./screens/ProductDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,11 @@ export default function App() {
         <Stack.Screen
           name="Bottom Navigation"
           component={BottomTabNavigator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ProductDetails"
+          component={ProductDetails}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
