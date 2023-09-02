@@ -45,7 +45,7 @@ module.exports = {
           },
         },
       ]);
-      return res.status(200).json({ length: result.length, products: result });
+      return res.status(200).json(result);
     } catch (err) {
       return res.status(500).json({ message: "Failed to Get the Products" });
     }

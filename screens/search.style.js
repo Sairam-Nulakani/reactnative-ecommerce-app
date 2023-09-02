@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     paddingHorizontal: SIZES.small,
+    paddingVertical: 10,
   },
   searchBtn: {
     width: 50,
@@ -33,6 +34,12 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
     borderRadius: SIZES.medium,
     alignItems: "center",
+  },
+  searchImage: {
+    resizeMode: "contain",
+    width: SIZES.width - 80,
+    height: SIZES.height - 300,
+    opacity: 0.8,
   },
 });
 export default styles;

@@ -1,4 +1,4 @@
-import { ActivityIndicator, FlatList, Text, View } from "react-native";
+import { ActivityIndicator, Text, View, FlatList } from "react-native";
 import React from "react";
 import styles from "./productList.style";
 import useFetch from "../../hooks/useFetch";
